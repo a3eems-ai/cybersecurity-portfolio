@@ -15,3 +15,10 @@ I set up a Kali Linux virtual machine using VirtualBox, giving me a safe, isolat
 I learned core Linux navigation commands: `pwd` (shows current location), `ls` (lists files/folders), `cd` (changes folder), and `whoami` (shows current user). I also learned to create, view, and edit files using `touch`, `cat`, and `nano`.
 
 Finally, I learned about file permissions, using `ls -l` to see who can read, write, or execute a file, and `chmod` to change those permissions. This matters for security because mis-configured permissions (files left open to everyone) are a real vulnerability attackers look for.
+
+### 3. Analyzing Network Traffic with Wireshark
+I installed Wireshark and used it to capture live network traffic from my own device in real time. I learned to use display filters to isolate specific types of traffic: `tls` to show only encrypted (HTTPS) traffic, `ip.addr == [IP]` to isolate all traffic to/from a specific address, and `http` to find unencrypted traffic.
+
+Most of my everyday browsing traffic was encrypted (TLS), while the small amount of unencrypted HTTP traffic I found was routine background activity, such as Windows checking certificate validity and software updates, not sensitive personal data.
+
+This exercise reinforced why HTTPS matters in practice: if sensitive information (like a login form) were sent over unencrypted HTTP instead, anyone intercepting the traffic could read it in plain text. This is the kind of traffic inspection SOC analysts use to investigate suspicious network activity.
